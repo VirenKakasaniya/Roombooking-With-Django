@@ -1,0 +1,48 @@
+{% extends 'account/main.html' %}
+
+{% block content%}
+
+
+  <br>
+
+  <div class="row">
+    <div class="col-md">
+      <div class="card card-body">
+        <h5>Rooms</h5>
+        <div style="text-align:right;">
+        <a class="btn btn-primary btn-lg" href="{% url 'CreateRoom' %}" role="button">Add Rooms</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'available' %}" role="button">Add Time</a>
+        </div>
+      </div>
+      <div class="card card-body">
+        <table class="table">
+          <tr>
+            <th>Category</th>
+            <th>description</th>
+            <th>Price</th>
+            <th>date</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+          {% for i in rooms %}
+          <tr>
+            <td>{{i.Category}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.date}}</td>
+  
+
+
+            <td><a class="btn btn-primary btn-lg" href="{% url 'UpdateRoom' i.id %}" role="button">Update</a></td>
+            <td><a class="btn btn-primary btn-lg" href="{% url 'DeleteRoom' i.id %}" role="button">Delete</a></td>
+          </tr>
+
+          {% endfor %}
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

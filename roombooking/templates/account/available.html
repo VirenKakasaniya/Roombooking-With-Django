@@ -1,0 +1,36 @@
+{% extends 'account/main.html' %}
+
+{% block content%}
+
+
+  <br>
+
+
+      <div class="card card-body">
+        <table class="table">
+          <tr>
+            <th>Advance Booking Days</th>
+            <th>Time For available</th>
+            <th>Time up to available</th>
+            <th>Update</th>
+
+          </tr>
+          {% for i in time %}
+          <tr>
+            <td>{{i.Advance_Booking_Days}}</td>
+            <td>{{i.Time_For_available}}</td>
+            <td>{{i.Time_up_to_available}}</td>
+
+
+            <td><a class="btn btn-primary btn-lg" href="{% url 'updatetime' i.id %}" role="button">Update</a></td>
+          </tr>
+
+          {% endfor %}
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

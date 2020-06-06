@@ -1,0 +1,20 @@
+{% extends 'account/main.html' %}
+{% load static%}
+{% block content%}
+
+<form   method="POST">
+  {% csrf_token %}
+  <input type="text" name="guestFirstName" placeholder="guestFirstName">
+	<input type="text" name="guestLastName" placeholder="guestLastName">
+  <input type="email" name="email" placeholder="email">
+  <input type="text" name="phone" placeholder="phone">
+	<input type="date" name="checkin" placeholder="checkin">
+	<input type="date" name="checkout" placeholder="checkout">
+	<input type="submit" name="register">
+
+
+
+
+</form>
+
+{% endblock%}

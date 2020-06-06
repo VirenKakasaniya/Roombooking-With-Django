@@ -1,0 +1,1 @@
+django,datetime and timezone module should be installed and for bootstrap make sure internet is available.

@@ -1,0 +1,38 @@
+{% extends 'account/main.html' %}
+
+{% block content%}
+
+
+  <br>
+
+  <div class="row">
+    <div class="col-md">
+      <div class="card card-body">
+        <h5>Rooms</h5>
+
+      </div>
+      <div class="card card-body">
+        <table class="table">
+          <tr>
+            <th>Category</th>
+            <th>description</th>
+            <th>Price</th>
+            <th>Book Room</th>
+          </tr>
+          {% for i in rooms %}
+          <tr>
+            <td>{{i.Category}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.price}}</td>
+            <td><a class="btn btn-primary btn-lg" href="{% url 'Reservation' i.id %}" role="Book Room">Book Room</a></td>
+          </tr>
+
+          {% endfor %}
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
